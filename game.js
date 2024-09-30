@@ -12,15 +12,11 @@ var userChosenColor;
 var currLevel;
 var userInputCount;
 function buttonFlashSound(whichButton) {
-    //console.log("buttonFlashSound("+whichButton+")");
     soundArray[whichButton].play();
     $("#"+whichButton).addClass("pressed");
     setTimeout(function() {
         $("#"+whichButton).removeClass("pressed");
     },100);
-    //console.log("Game: " + gamePattern);
-    //console.log("User: " + userClickedPattern);
-    //console.log("inputcount: "+ userInputCount +" Level: "+ currLevel);
 }
 function pushToSequence() {
     //console.log("pushToSequence(), length of game pattern = "+gamePattern.length);
@@ -71,10 +67,12 @@ function playMove() {
 }
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     // true for mobile device
+    alert("mobile device");
     instructionText="Tap anywhere to start game";
     $(document).click(startGame);
   }else{
     // false for not mobile device
+    alert("not mobile device");
     instructionText="Press any key to start game";
     $(document).keydown(startGame);
   }
