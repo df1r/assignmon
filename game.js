@@ -67,12 +67,12 @@ function playMove() {
 }
 if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     // true for mobile device
-    alert("mobile device");
     instructionText="Tap anywhere to start game";
+    $("h1").text(instructionText);
     $(document).click(startGame);
   }else{
     // false for not mobile device
-    alert("not mobile device");
     instructionText="Press any key to start game";
+    $("h1").text(instructionText);
     $(document).keydown(startGame);
   }
